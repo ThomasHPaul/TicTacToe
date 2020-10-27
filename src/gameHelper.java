@@ -66,7 +66,7 @@ class GameHelper {
     }
 
     private void playerTurn(Board board) {
-
+        //TODO: fix the infinite loop that occurs when picking a spot already occupied
         int row;
         int column;
 
@@ -102,7 +102,6 @@ class GameHelper {
                 break;
             } else {
                 System.out.println("That space has already been chosen\nPlease pick another");
-                continue;
             }
         }
     }

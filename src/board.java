@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Board {
     final private Cell[][] board;
 
@@ -31,6 +33,18 @@ class Board {
                 , board[2][0].getValue()
                 , board[2][1].getValue()
                 , board[2][2].getValue());
+    }
+
+    public ArrayList<Cell> getEmptyCells() {
+        ArrayList<Cell> emptyCells = new ArrayList<Cell>();
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                if(board[i][j].getValue().equals("-")) {
+                    emptyCells.add(board[i][j]);
+                }
+            }
+        }
+        return emptyCells;
     }
 
     public Cell getCell(int row, int column) {
